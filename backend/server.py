@@ -93,7 +93,7 @@ async def index(request: Request):
     # ইউজার যদি অলরেডি লগইন করা থাকে, তাকে সরাসরি ড্যাশবোর্ডে পাঠিয়ে দেবে
     if request.cookies.get("access_token"):
         return HTMLResponse(content="<script>window.location.href='/dashboard';</script>")
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request,"index.html")
 
 
 
@@ -227,9 +227,9 @@ async def dashboard(
     }
 
     if request.headers.get("HX-Request"):
-        return templates.TemplateResponse("partials/table_body.html", context)
+        return templates.TemplateResponse(request,"partials/table_body.html", context)
 
-    return templates.TemplateResponse("dashboard.html", context)
+    return templates.TemplateResponse(request,"dashboard.html", context)
 
 
 # --- ১. ইউজার ডিলিট করার এন্ডপয়েন্ট (HTMX Delete) ---
@@ -418,7 +418,7 @@ async def amil_1(
     db.refresh(db_user)
 
     # ৫. সফলতার মেসেজসহ জিংজা টেমপ্লেট রেসপন্স রিটার্ন
-    return templates.TemplateResponse("success_msg.html", {"request": request, "user": db_user})
+    return templates.TemplateResponse(request,"success_msg.html", {"user": db_user})
 
 
 @app.get("/amil/user-edit/{user_id}", response_class=HTMLResponse)
