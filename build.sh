@@ -2,12 +2,12 @@
 # exit on error
 set -o errexit
 
-# ১. পাইপ এবং প্যাকেজ ইনস্টল
+# 1. Install pip packages
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# ২. লিনাক্স Tailwind CLI ডাউনলোড এবং output.css জেনারেট
-curl -sLO https://github.com
+# 2. Download Tailwind CLI for Linux and generate output.css
+curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
 chmod +x tailwindcss-linux-x64
 ./tailwindcss-linux-x64 -i ./frontend/static/input.css -o ./frontend/static/output.css --minify
 
