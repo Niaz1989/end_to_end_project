@@ -1,0 +1,23 @@
+# ডাটাবেজ পাসওয়ার্ড ও সিক্রেট ফাইল (খুবই গুরুত্বপূর্ণ)
+backend/.env
+.env
+
+# Tailwind CSS জেনারেটেড ফাইল এবং উইন্ডোজ এক্সিকিউটেবল
+tailwindcss.exe
+frontend/static/output.css
+
+# পাইথন গ্লোবাল বা লোকাল ক্যাশ এবং সিস্টেম ফাইল
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# উইন্ডোজ সিস্টেম ফাইল
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+frontend/static/uploads/
